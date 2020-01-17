@@ -24,11 +24,11 @@
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-|photo|text|null: false|
-|message|string|null: false|
+|photo|text||
+|message|string||
 ### Association
-- belongs_to :users
-- belongs_to :groups
+- belong_to :users
+- belong_to :groups
 
 ## groups_userテーブル
 |Column|Type|Options|
@@ -36,6 +36,6 @@
 |user_id|integer|null: false, foreign_key: true|
 |groups_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :users
-- belongs_to :groups
+- belong_to :users
+- belong_to :groups
 
