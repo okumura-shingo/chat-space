@@ -1,0 +1,50 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "UTF-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{:content => "ie=edge", "http-equiv" => "X-UA-Compatible"}/
+    %link{:href => "_reset.scss", :rel => "stylesheet"}/
+    %link{:href => "_chat-side.css", :rel => "stylesheet"}/
+    %title chat-app
+  %body
+    .wrapper
+      .chat-side
+        .side-header
+          .side-box
+            %p.user-name user-name
+            %ul.menu
+              %li.new-group
+                = link_to '#' do
+                  = icon('fa', 'edit',class: 'icon')
+              %li.edit-user
+                = link_to '#' do
+                  = icon('fa', 'cog',class: 'icon')
+        .groups
+          .group
+            %p.group__group-name 奥村
+            %p.group__latest-massage よろしく
+            %p.group__group-name 奥村
+            %p.group__latest-massage bbb
+
+      .chat-main
+        .main-header
+          .header-leftbox
+            %h2.current-group #68期　エンジニアクラス
+            %ul.member-list
+              Member:
+              %li.member-first abe
+              %li.member-second matsumoto
+              %li.member-third suzuki
+          %a{:href => "#"}
+            .edit-btn Edit
+        .messages
+        .form
+          %form.new-message
+            .input-box
+              %input.input-text{:placeholder => "type a message", :type => "text"}/
+              %label.input-box__image
+                = icon('fa','image',class: 'icon')
+                %input.input-box__image__file{:type => "file"}/
+            %input.submit-btn{:name => "commit", :type => "submit", :value => "Send"}/

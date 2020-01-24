@@ -1,0 +1,133 @@
+.wrapper {
+	display: flex;
+	height: 100vh;
+}
+.chat-side {
+  width: 300px;
+  color: white
+	// background-color: #333333;
+}
+.chat-side a{
+  color: white;
+}
+.chat-main {
+	width: calc(100vw - 300px);
+	// background-color: #1a1d21;
+}
+.side-header {
+	background-color: #253141;
+	height: 100px;
+	display: flex;
+	align-items: center;
+}
+.groups {
+	background-color: #2f3e51;
+  height: calc(100vh - 100px);
+  padding: 20px 20px 0;
+}
+.group__group-name {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+.group__latest-massage {
+  font-size: 11px;
+  margin-bottom: 40px;
+}
+.main-header {
+  height: 100px;
+  border-bottom: 1px solid #eee;
+	display: flex;
+	padding: 0 40px;
+	align-items: center;
+  justify-content: space-between;
+}
+
+.messages {
+	background-color: #eee;
+	height: calc(100vh - 190px);
+}
+.form {
+	background-color: #ddd;
+	height: 90px;
+	padding: 20px 40px;
+}
+.side-box {
+	height: 20px;
+	width: 260px;
+	margin: 0 20px;
+	display: flex;
+	justify-content: space-between;
+	font-weight: bold;
+	.user-name {
+		color: #eeeeee;
+	}
+	.menu {
+		display: flex;
+	}
+}
+.menu {
+	.new-group {
+		margin-right: 5px;
+	}
+}
+a {
+	text-decoration: none;
+	color: #38aef0;
+}
+.header-leftbox {
+	margin-top: 20px;
+}
+.current-group {
+	color: #333333;
+	margin-bottom: 15px;
+	font-size: 20px;
+}
+.member-list {
+	font-size: 12px;
+	color: #999999;
+	display: flex;
+	li {
+		margin-left: 5px;
+	}
+}
+.edit-btn {
+	font-size: 16px;
+	border: 1px solid #38aef0;
+	padding: 10px 20px;
+}
+.new-message {
+	display: flex;
+}
+.input-box {
+  width: 100%;
+  position: relative;
+}
+.input-text {
+	font-size: 16px;
+	height: 50px;
+	width: 100%;
+	padding: 0 40px 0 10px;
+	color: #434a54;
+	border-style: none;
+}
+.input-box__image {
+  font-size: 1.3rem;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  &__file {
+    display: none;
+  }
+}
+
+.submit-btn {
+	width: 100px;
+	height: 50px;
+	padding: 0 30px;
+	margin-left: 15px;
+	background-color: #38aef0;
+	font-size: 16px;
+	cursor: pointer;
+	color: white;
+}
