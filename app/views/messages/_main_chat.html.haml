@@ -1,22 +1,4 @@
 .wrapper
-.chat-side
-  .side-header
-    .side-box
-      %p.user-name 
-        = current_user.name
-      %ul.menu
-        %li.new-group
-          = link_to do
-            = icon('fa', 'edit',class: 'icon')
-        %li.edit-user
-          = link_to edit_user_path(current_user) do
-            = icon('fa', 'cog',class: 'icon')
-  .groups
-    .group
-      %p.group__group-name 奥村
-      %p.group__latest-massage よろしく
-      %p.group__group-name 奥村
-      %p.group__latest-massage bbb
 
 .chat-main
   .main-header
