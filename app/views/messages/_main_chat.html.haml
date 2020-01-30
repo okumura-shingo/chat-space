@@ -1,21 +1,25 @@
 .wrapper
+
 .chat-main
   .main-header
     .header-leftbox
-      %h2.current-group #68期　エンジニアクラス
+      %h2.current-group
+        = @group.name
       %ul.member-list
         Member:
-        %li.member-first abe
-        %li.member-second matsumoto
-        %li.member-third suzuki
-    %a{:href => "#"}
-      .edit-btn Edit
+        - @user.each do |users|
+          = users.name
+    %a
+      = link_to edit_group_path(@group), class: "edit-btn" do
+        Edit   
   .messages
+    = render @messages
   .form
-    %form.new-message
-      .input-box
-        %input.input-text{:placeholder => "type a message", :type => "text"}/
-        %label.input-box__image
-          = icon('fa','image',class: 'icon')
-          %input.input-box__image__file{:type => "file"}/
-      %input.submit-btn{:name => "commit", :type => "submit", :value => "Send"}/
+    = form_for [@group, @message] do |f|
+      .new-message
+        .input-box
+          = f.text_field :content, class: 'input-text', :placeholder => "type a message", :type => "text"
+          = f.label :image, class: 'input-box__image' do
+            = icon('fa','image',class: 'icon')
+            = f.file_field :image, class: 'input-box__image__file'
+        = f.submit class: 'submit-btn', :name => "commit", :type => "submit", :value => "Send"
