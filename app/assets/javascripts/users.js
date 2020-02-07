@@ -17,6 +17,7 @@ $(function() {
     `;
     $("#user-search-result").append(html);
   }
+
   function addDeleteUser(name, id) {
     let html = `
     <div class="chat-group-user clearfix" id="${id}">
@@ -25,39 +26,41 @@ $(function() {
     </div>`;
     $(".js-add-user").append(html);
   }
+
   function addMember(userId) {
     let html = `<input value="${userId}" name="group[user_ids][]" type="hidden" id="group_user_ids_${userId}" />`;
     $(`#${userId}`).append(html);
   }
-  $("#user-search-field").on("keyup", function() {
-    let input = $("#user-search-field").val();
-    $.ajax({
-      type: "GET",
-      url: "/users",
-      data: { keyword: input },
-      dataType: "json"
-    })
-      .done(function(users) {
-        $("#user-search-result").empty();
 
-        if (users.length !== 0) {
-          users.forEach(function(user) {
-            addUser(user);
-          });
-        } else if (input.length == 0) {
-          return false;
-        } else {
-          addNoUser();
-        }
-      })
-      .fail(function() {
-        alert("通信エラーです。ユーザーが表示できません。");
-      });
+  $("#user-search-field").on("keyup", function() {
+    var input = $("#user-search-field").val();
+    $.ajax({
+      url: "/users",
+      type: "GET",
+      dataType: "json",
+      data: { keyword: input }
+    })
+    .done(function(users) {
+      $("#user-search-result").empty();
+
+      if (users.length !== 0) {
+        users.forEach(function(user) {
+          addUser(user);
+        });
+      } else if (input.length == 0) {
+        return false;
+      } else {
+        addNoUser();
+      }
+    })
+    .fail(function() {
+      alert("通信エラーです。ユーザーが表示できません。");
+    });
   });
+
   $(document).on("click", ".chat-group-user__btn--add", function() {
-    console.log
-    const userName = $(this).attr("data-user-name");
-    const userId = $(this).attr("data-user-id");
+    var userName = $(this).attr("data-user-name");
+    var userId = $(this).attr("data-user-id");
     $(this)
       .parent()
       .remove();

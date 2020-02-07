@@ -23,11 +23,11 @@
   height: calc(100vh - 100px);
   padding: 20px 20px 0;
 }
-.group__group-name {
+.group__name {
   font-size: 15px;
   margin-bottom: 5px;
 }
-.group__latest-massage {
+.group__message {
   font-size: 11px;
   margin-bottom: 40px;
 }
@@ -42,10 +42,29 @@
 
 .messages {
   background-color: #eee;
+  color: #999999;
   height: calc(100vh - 190px);
+  padding: 46px 40px;
   overflow: scroll;
+}
+.upper-message {
+  margin-bottom: 10px;
+  display: flex;
 
 }
+.upper-message__user-name {
+  color: black;
+}
+.upper-message__date {
+  margin-left: 10px;
+  font-size: 12px;
+}
+.lower-message__content {
+  color: black;
+  font-size: 14px;
+  padding-bottom: 40px;
+}
+
 .form {
   background-color: #ddd;
   height: 90px;
