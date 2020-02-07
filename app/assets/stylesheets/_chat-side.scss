@@ -33,7 +33,6 @@
 }
 .main-header {
   height: 100px;
-  border-bottom: 1px solid #eee;
   display: flex;
   padding: 0 40px;
   align-items: center;
@@ -41,7 +40,7 @@
 }
 
 .messages {
-  background-color: #eee;
+  background-color: #fafafa;
   color: #999999;
   height: calc(100vh - 190px);
   padding: 46px 40px;
